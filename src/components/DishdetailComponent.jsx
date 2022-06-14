@@ -9,12 +9,9 @@ class CommentForm extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      isNavOpen: false,
       isModalOpen: false
     };
-    this.toggleNav = this.toggleNav.bind(this) //Another way to declare the function to use as shown in the NavbarToggler (as a state reference). The other way was to use an arrow function
-    this.toggleModal = this.toggleModal.bind(this)
-    this.handleLogin = this.handleLogin.bind(this)
+    this.toggleModal = this.toggleModal.bind(this) //Another way to declare the function to use as shown in the NavbarToggler (as a state reference). The other way was to use an arrow function
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -23,23 +20,10 @@ class CommentForm extends Component {
     alert('Current State is: ' + JSON.stringify(values));
   }
 
-  toggleNav() { //Described above
-    this.setState({
-      isNavOpen: !this.state.isNavOpen
-    });
-  }
-
-  toggleModal() {
+  toggleModal() { //Described above
     this.setState({
       isModalOpen: !this.state.isModalOpen
     });
-  }
-
-  handleLogin(event) {
-    this.toggleModal();
-    alert("Username: " + this.username.value + " Password: " + this.password.value
-      + " Remember: " + this.remember.checked); //GETTING DIRECTLY FROM THE DOM
-    event.preventDefault();
   }
 
   render() {
