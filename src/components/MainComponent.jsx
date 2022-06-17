@@ -19,9 +19,6 @@ const mapStateToProps = state => { //STATE from redux store!! -> Become availabl
 }
 
 class Main extends Component {
-  constructor(props) {
-    super(props);
-  }
 
   render() {
 
