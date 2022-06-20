@@ -3,6 +3,7 @@ import { Card, CardImg, CardText, CardBody, CardTitle, Breadcrumb, BreadcrumbIte
 import { Link } from 'react-router-dom';
 import { Control, LocalForm, Errors } from 'react-redux-form';
 import { Loading } from './LoadingComponent';
+import { baseUrl } from '../shared/baseUrl';
 
 const maxLength = (len) => (val) => !(val) || (val.length <= len);
 const minLength = (len) => (val) => val && (val.length >= len);
@@ -92,7 +93,7 @@ function RenderDish({ dish }) {
     return (
       <div key={dish.id}>
         <Card>
-          <CardImg width="100%" src={dish.image} alt={dish.author} />
+          <CardImg width="100%" src={baseUrl + dish.image} alt={dish.author} />
           <CardBody>
             <CardTitle heading>{dish.author}</CardTitle>
             <CardText>{dish.description} </CardText>
